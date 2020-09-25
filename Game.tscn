@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/PNG/playerShip1_green.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Backgrounds/space.png" type="Texture" id=3]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 488.222, 299 )
+scale = Vector2( 0.648148, 0.648148 )
+texture = ExtResource( 3 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Player" type="Sprite" parent="Player"]
+position = Vector2( 483, 501 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+position = Vector2( 1, 0 )
+polygon = PoolVector2Array( 454, 493, 435.147, 491.994, 437, 534, 485, 543, 532, 528, 531, 495, 506, 485, 491, 466, 474, 466 )
+
+[node name="Bullet" type="Node2D" parent="."]
